@@ -1,0 +1,10 @@
+Class :
+_A class game() that old all the logic
+
+
+Functionnality:
+_Drawing the hangman
+_Generaing words from (? A dictionnary / a list already define /Random Word Generator)
+_A losing logic (end screen / message)
+_A difficulty level ?
+_A way to record the letter input ?
