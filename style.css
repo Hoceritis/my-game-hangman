@@ -1,0 +1,46 @@
+.div1 {
+    border: solid 3px;
+    height: 230px;
+    padding-top: 10px;
+}
+
+.placeholder {
+    border: solid 3px;
+    height: 230px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.div3 {
+    border: solid 3px;
+    height: 230px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.first-line {
+    display: flex;
+}
+
+.second-line {
+    display: flex;
+}
+
+.third-line {
+    display: flex;
+}
+
+.letter-style {
+    background-color:paleturquoise;
+    padding: 5px;
+    margin: 3px;
+    border: 1px solid;
+}
