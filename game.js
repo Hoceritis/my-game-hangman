@@ -1,30 +1,35 @@
 let numberOflives = 6;
 let correctGuess = [];
 let poolOfWords = ['confusion', 'classic', 'potential', 'excellent', 'glacial', 'trust', 'bittersweet', 'noise', 'polite', 'famous', 'trial','emotion','strike','crude', 'coalition']
-
-
+let total = 0;
 
 let currentWord = poolOfWords[Math.floor(Math.random() * poolOfWords.length)]
 console.log(currentWord);
 
 let keys = document.querySelectorAll('.letter-style');
 
+let totalPoints = document.querySelector('.score');
+
 for(let i = 0; i < keys.length ; i++){
     keys[i].addEventListener('click', function(){
         if(currentWord.includes(keys[i].innerText.toLowerCase()) && !correctGuess.includes(keys[i].innerText.toLowerCase())) {
-            correctGuess.push(keys[i].innerText.toLowerCase())
+            correctGuess.push(keys[i].innerText.toLowerCase());
+            // keys[i].setAttribute('disabled', '');
         } else if (!currentWord.includes(keys[i].innerText.toLowerCase())){
             numberOflives -= 1;
+            // keys[i].setAttribute('disabled', '');
         }
         display();
-        liveCounter();
-        console.log(correctGuess);
-        console.log(numberOflives);
+        livesCounter();
     })
 }
 
-function liveCounter (){
-    if(numberOflives < 1) window.alert('You lose!');
+function livesCounter (){
+    if(numberOflives < 1){
+        window.alert(`You lose! Your score is ${total}`);
+        total = 0;
+        totalPoints.innerHTML = total;
+    } 
 }
 
 function reset(){
@@ -45,8 +50,11 @@ function display(){
     }
     let placeHolderSpace = document.querySelector('.placeholder')
     placeHolderSpace.innerHTML = placeHolder;
-    if(currentWord === placeHolderSpace.innerHTML.replace(/\s/g, '')) window.alert('You won!')
-
+    if(currentWord === placeHolderSpace.innerHTML.replace(/\s/g, '')) {
+        window.alert('You won!');
+        total++;
+        totalPoints.innerHTML = total;
+    }
 }
 
 
