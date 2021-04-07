@@ -2,6 +2,10 @@
     border: solid 3px;
     height: 230px;
     padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .placeholder {
@@ -39,8 +43,50 @@
 }
 
 .letter-style {
-    background-color:paleturquoise;
-    padding: 5px;
+    background: #41a2e6;
+    border: 1px solid #43a3e6;
+    border-radius: 6px;
+    margin: 2px;
+    box-shadow: 1px 1px 2px #999;
+    color: #fff;
+    padding: 6px 14px;
+    outline: 0;
+    /* padding: 5px;
     margin: 3px;
-    border: 1px solid;
+    border: 1px solid; */
 }
+
+.button {
+    border: solid 1px;
+    margin-bottom: 5px;
+    margin-right: 2px;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.hangman {
+    border: solid 1px;
+    margin-bottom: 5px;
+    height: 100%;
+    width: 70%;
+}
+
+#new-game {
+    background: #41a2e6;
+    border: 1px solid #43a3e6;
+    border-radius: 6px;
+    box-shadow: 1px 1px 2px #999;
+    color: #fff;
+    padding: 6px 14px;
+    outline: 0;
+  }
+
+  .score {
+      margin-bottom: 50px;
+      margin-right: 50px;
+  }

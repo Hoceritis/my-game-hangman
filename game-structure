@@ -2,7 +2,7 @@ Class :
 _A class game() that hold all the logic
 
 
-Functionnality:
+05/ 04 Functionnality:
 _A title card with a start button + game's name ?
 _Drawing the hangman
 _Generating words from : (A dictionnary /A list already define /Random Word Generator ?)
