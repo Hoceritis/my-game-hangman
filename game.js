@@ -27,6 +27,7 @@ for(let i = 0; i < keys.length ; i++){
 function livesCounter (){
     if(numberOflives < 1){
         window.alert(`You lose! Your score is ${total}`);
+        reset();
         total = 0;
         totalPoints.innerHTML = total;
     } 
@@ -51,7 +52,7 @@ function display(){
     let placeHolderSpace = document.querySelector('.placeholder')
     placeHolderSpace.innerHTML = placeHolder;
     if(currentWord === placeHolderSpace.innerHTML.replace(/\s/g, '')) {
-        window.alert('You won!');
+        window.alert('Well play!');
         total++;
         totalPoints.innerHTML = total;
     }
