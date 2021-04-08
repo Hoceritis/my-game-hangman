@@ -27,13 +27,13 @@ rightLeg.style.display = "none";
 
 //this could be an object ?
 
-let thrashtalk = ["Lol, can't you spell ? ", "Really ? Repeat after me : ", "Please open your dictionnary and go to : "];
+let thrashtalk = ["Lol you can't spell : ", "Really ? Repeat after me : ", "Please, open your dictionary and look for : "];
 let randomTT = thrashtalk[Math.floor(Math.random() * thrashtalk.length)]
 console.log(randomTT)
 let thrashtalkDiv = document.querySelector('.trashtalk')
 
 
-let kudos = ['Nice ! Praised be the Genius Guesser ', 'Bravo ! Your sublime intellect has unveiled the thruth ', 'Damn ! You broke the game']
+let kudos = ['Nice ! Praised be the Genius Guesser ', 'Bravo ! Your sublime intellect has unveiled the truth ', 'Damn ! You broke the game']
 let kudosRand = kudos[Math.floor(Math.random() * kudos.length)]
 console.log(kudosRand)
 let kudosRandDiv = document.querySelector('.trashtalk');
@@ -51,10 +51,10 @@ for(let i = 0; i < keys.length ; i++){
     keys[i].addEventListener('click', function(){
         if(currentWord.includes(keys[i].innerText.toLowerCase()) && !correctGuess.includes(keys[i].innerText.toLowerCase())) {
             correctGuess.push(keys[i].innerText.toLowerCase());
-            keys[i].style.background = 'green';
+            keys[i].style.background = '#42AD42';
         } else if (!currentWord.includes(keys[i].innerText.toLowerCase())){
             numberOflives -= 1;
-            keys[i].style.background = 'red';
+            keys[i].style.background = '#E05E4A';
             switch (numberOflives) {
                 case 5:
                     head = document.querySelector('.head')
@@ -116,7 +116,7 @@ function reset(){
     correctGuess = [];
     keys = document.querySelectorAll('.letter-style')
     keys.forEach(function(key){
-        key.style.background = '#43a3e6';
+        key.style.background = '#756057';
     })
 }
 
@@ -133,10 +133,14 @@ function display(){
     }
     let placeHolderSpace = document.querySelector('.placeholder')
     placeHolderSpace.innerHTML = placeHolder;
+    placeHolderSpace.style.fontSize = '40px';
     if(currentWord === placeHolderSpace.innerHTML.replace(/\s/g, '')) {
-        document.querySelector('.trashtalk').innerText = kudosRand;
         document.querySelector('.div3').style.display = "none";
+        kudosRandDiv.innerText = kudosRand;
+        kudosRandDiv.style.fontSize = '40px';
+        kudosRandDiv.style.fontStyle = 'sans-serif';
         kudosRandDiv.style.display = 'block';
+        kudosRandDiv.style.color = 'black';
         //change the kudos style
         total++;
         totalPoints.innerHTML = total;

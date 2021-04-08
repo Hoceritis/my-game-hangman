@@ -1,7 +1,11 @@
 body {
-    background: #FEF5E7;
+    background: #e5ec80;
 }
 
+.title {
+    margin-left: 500px;;
+    font-size: 60px;
+}
 
 .div1 {
     /* border: solid 3px; */
@@ -48,8 +52,8 @@ body {
 }
 
 .letter-style {
-    background: #41a2e6;
-    border: 1px solid #43a3e6;
+    background:#756057;
+    border: 1px solid #5f4d45;
     border-radius: 6px;
     margin: 2px;
     box-shadow: 1px 1px 2px #999;
@@ -82,8 +86,8 @@ body {
 }
 
 #new-game {
-    background: #41a2e6;
-    border: 1px solid #43a3e6;
+    background: #756057;
+    border: 1px solid #756057;
     border-radius: 6px;
     box-shadow: 1px 1px 2px #999;
     color: #fff;
@@ -92,6 +96,7 @@ body {
   }
 
   .total-point {
+      font-size: 40px;
       margin-bottom: 50px;
       margin-right: 50px;
   }
