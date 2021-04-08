@@ -1,3 +1,8 @@
+body {
+    background: #FEF5E7;
+}
+
+
 .div1 {
     /* border: solid 3px; */
     height: 230px;
@@ -158,4 +163,10 @@
   #hangman .left-leg,
   #hangman .right-leg {
     margin-top: -192px;
+  }
+
+  .trashtalk {
+      position: absolute;
+      top: 570px;
+      left: 350px;
   }
