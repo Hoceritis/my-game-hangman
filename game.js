@@ -25,8 +25,6 @@ leftLeg.style.display = "none";
 let rightLeg = document.querySelector('.right-leg')
 rightLeg.style.display = "none";
 
-//this could be an object ?
-
 let thrashtalk = ["Lol, you can't spell : ", "Really ? Repeat after me : ", "Please, open your dictionary and look for : "];
 let randomTT = thrashtalk[Math.floor(Math.random() * thrashtalk.length)]
 console.log(randomTT)
@@ -45,7 +43,6 @@ let keys = document.querySelectorAll('.letter-style');
 
 let totalPoints = document.querySelector('.score');
 
-//
 
 for(let i = 0; i < keys.length ; i++){
     keys[i].addEventListener('click', function(){
@@ -141,7 +138,6 @@ function display(){
         kudosRandDiv.style.fontStyle = 'sans-serif';
         kudosRandDiv.style.display = 'block';
         kudosRandDiv.style.color = 'black';
-        //change the kudos style
         total++;
         totalPoints.innerHTML = total;
     }
@@ -150,8 +146,6 @@ function display(){
 document.querySelector('#new-game').addEventListener('click', function(){
     currentWord = getNewWord(poolOfWords, currentWord)
     display();
-    // randomT();
-    // kudosR();
     console.log(currentWord)
     document.querySelector('.div3').style.display = "flex";
     document.querySelector('.trashtalk').style.display = 'none';
@@ -174,12 +168,4 @@ function getNewWord(wordsArray, currentWord){
     return chosenWord;
  }
 
-
-//  function kudosR(){
-//      return kudosRand;
-//  }
-
-//  function randomT(){
-//      return randomTT;
-//  }
 
