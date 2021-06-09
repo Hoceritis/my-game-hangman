@@ -27,13 +27,13 @@ rightLeg.style.display = "none";
 
 //this could be an object ?
 
-let thrashtalk = ["Lol you can't spell : ", "Really ? Repeat after me : ", "Please, open your dictionary and look for : "];
+let thrashtalk = ["Lol, you can't spell : ", "Really ? Repeat after me : ", "Please, open your dictionary and look for : "];
 let randomTT = thrashtalk[Math.floor(Math.random() * thrashtalk.length)]
 console.log(randomTT)
 let thrashtalkDiv = document.querySelector('.trashtalk')
 
 
-let kudos = ['Nice ! Praised be the Genius Guesser ', 'Bravo ! Your sublime intellect has unveiled the truth ', 'Damn ! You broke the game']
+let kudos = ['Nice ! Praised be the Genius Guesser ', 'Bravo ! Your sublime intellect has unveiled the thruth ', 'Damn ! You broke the game']
 let kudosRand = kudos[Math.floor(Math.random() * kudos.length)]
 console.log(kudosRand)
 let kudosRandDiv = document.querySelector('.trashtalk');
