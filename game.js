@@ -27,7 +27,6 @@ rightLeg.style.display = "none";
 
 let thrashtalk = ["Lol, you can't spell : ", "Really ? Repeat after me : ", "Please, open your dictionary and look for : "];
 let randomTT = thrashtalk[Math.floor(Math.random() * thrashtalk.length)]
-console.log(randomTT)
 let thrashtalkDiv = document.querySelector('.trashtalk')
 
 
@@ -37,13 +36,13 @@ console.log(kudosRand)
 let kudosRandDiv = document.querySelector('.trashtalk');
 
 let currentWord = poolOfWords[Math.floor(Math.random() * poolOfWords.length)]
-console.log(currentWord);
 
 let keys = document.querySelectorAll('.letter-style');
 
 let totalPoints = document.querySelector('.score');
 
-
+// need to separate the 2 partd of this function
+// One for iterating over the keys, and another one checking the correctness + removing lives if needed
 for(let i = 0; i < keys.length ; i++){
     keys[i].addEventListener('click', function(){
         if(currentWord.includes(keys[i].innerText.toLowerCase()) && !correctGuess.includes(keys[i].innerText.toLowerCase())) {
@@ -94,6 +93,7 @@ for(let i = 0; i < keys.length ; i++){
     })
 }
 
+// Inline styling ? Needs to be exported to the CSS file
 function livesCounter (){
     if(numberOflives < 1){
         thrashtalkDiv.innerText = randomTT + `${currentWord}`;
@@ -117,6 +117,8 @@ function reset(){
     })
 }
 
+// Do I really need an 'else' here ?
+// Inline styling ? CSS file should host it
 function display(){
 
     let placeHolder = '';
