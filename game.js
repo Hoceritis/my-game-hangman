@@ -41,7 +41,7 @@ let keys = document.querySelectorAll('.letter-style');
 
 let totalPoints = document.querySelector('.score');
 
-// need to separate the 2 partd of this function
+// need to separate the 2 parts of this function
 // One for iterating over the keys, and another one checking the correctness + removing lives if needed
 for(let i = 0; i < keys.length ; i++){
     keys[i].addEventListener('click', function(){
@@ -51,46 +51,50 @@ for(let i = 0; i < keys.length ; i++){
         } else if (!currentWord.includes(keys[i].innerText.toLowerCase())){
             numberOflives -= 1;
             keys[i].style.background = '#E05E4A';
-            switch (numberOflives) {
-                case 5:
-                    head = document.querySelector('.head')
-                    head.style.display = "block";
-                    break;
-                case 4:
-                    head = document.querySelector('.head').style.display = "block";
-                    body = document.querySelector('.body').style.display = "block";
-                    break;
-                case 3:
-                    head = document.querySelector('.head').style.display = "block";
-                    body = document.querySelector('.body').style.display = "block";
-                    leftArm = document.querySelector('.left-arm').style.display = "block";
-                    break;
-                case 2:
-                    head = document.querySelector('.head').style.display = "block";
-                    body = document.querySelector('.body').style.display = "block";
-                    leftArm = document.querySelector('.left-arm').style.display = "block";
-                    rightArm = document.querySelector('.right-arm').style.display = "block";
-                    break;
-                case 1: 
-                    head = document.querySelector('.head').style.display = "block";
-                    body = document.querySelector('.body').style.display = "block";
-                    leftArm = document.querySelector('.left-arm').style.display = "block";
-                    rightArm = document.querySelector('.right-arm').style.display = "block";
-                    leftLeg = document.querySelector('.left-leg').style.display = "block";
-                    break;
-                case 0:
-                    head = document.querySelector('.head').style.display = "block";
-                    body = document.querySelector('.body').style.display = "block";
-                    leftArm = document.querySelector('.left-arm').style.display = "block";
-                    rightArm = document.querySelector('.right-arm').style.display = "block";
-                    leftLeg = document.querySelector('.left-leg').style.display = "block";
-                    rightLeg = document.querySelector('.right-leg').style.display = "block";
-                    break;
-                }
         }
         display();
         livesCounter();
+        hangman();
     })
+}
+
+function hangman() {
+    switch (numberOflives) {
+        case 5:
+            head = document.querySelector('.head')
+            head.style.display = "block";
+            break;
+        case 4:
+            head = document.querySelector('.head').style.display = "block";
+            body = document.querySelector('.body').style.display = "block";
+            break;
+        case 3:
+            head = document.querySelector('.head').style.display = "block";
+            body = document.querySelector('.body').style.display = "block";
+            leftArm = document.querySelector('.left-arm').style.display = "block";
+            break;
+        case 2:
+            head = document.querySelector('.head').style.display = "block";
+            body = document.querySelector('.body').style.display = "block";
+            leftArm = document.querySelector('.left-arm').style.display = "block";
+            rightArm = document.querySelector('.right-arm').style.display = "block";
+            break;
+        case 1: 
+            head = document.querySelector('.head').style.display = "block";
+            body = document.querySelector('.body').style.display = "block";
+            leftArm = document.querySelector('.left-arm').style.display = "block";
+            rightArm = document.querySelector('.right-arm').style.display = "block";
+            leftLeg = document.querySelector('.left-leg').style.display = "block";
+            break;
+        case 0:
+            head = document.querySelector('.head').style.display = "block";
+            body = document.querySelector('.body').style.display = "block";
+            leftArm = document.querySelector('.left-arm').style.display = "block";
+            rightArm = document.querySelector('.right-arm').style.display = "block";
+            leftLeg = document.querySelector('.left-leg').style.display = "block";
+            rightLeg = document.querySelector('.right-leg').style.display = "block";
+            break;
+        }
 }
 
 // Inline styling ? Needs to be exported to the CSS file
