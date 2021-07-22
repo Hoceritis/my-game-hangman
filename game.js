@@ -97,24 +97,21 @@ function hangman() {
         }
 }
 
-// Inline styling ? Needs to be exported to the CSS file
+
 function livesCounter (){
     if(numberOflives < 1){
         thrashtalkDiv.innerText = randomTT + `${currentWord}`;
         thrashtalkDiv.style.display = 'block';
-            thrashtalkDiv.style.fontSize = '40px';
-            thrashtalkDiv.style.fontStyle = 'sans-serif';
-            thrashtalkDiv.style.color = 'black';
         document.querySelector('.div3').style.display = "none";
         reset();
-        total = 0;
-        totalPoints.innerHTML = total;
     } 
 }
 
 function reset(){
     numberOflives = 6;
     correctGuess = [];
+    total = 0;
+    totalPoints.innerHTML = total;
     keys = document.querySelectorAll('.letter-style')
     keys.forEach(function(key){
         key.style.background = '#756057';
