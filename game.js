@@ -32,7 +32,6 @@ let thrashtalkDiv = document.querySelector('.trashtalk')
 
 let kudos = ['Nice ! Praised be the Genius Guesser ', 'Bravo ! Your sublime intellect has unveiled the thruth ', 'Damn ! You broke the game']
 let kudosRand = kudos[Math.floor(Math.random() * kudos.length)]
-console.log(kudosRand)
 let kudosRandDiv = document.querySelector('.trashtalk');
 
 let currentWord = poolOfWords[Math.floor(Math.random() * poolOfWords.length)]
@@ -97,7 +96,8 @@ function hangman() {
         }
 }
 
-
+// should I initialized a new variable for the thrashtalk div ?
+// Instead of having these line in livesCounter and Display ?
 function livesCounter (){
     if(numberOflives < 1){
         thrashtalkDiv.innerText = randomTT + `${currentWord}`;
@@ -137,10 +137,7 @@ function display(){
     if(currentWord === placeHolderSpace.innerHTML.replace(/\s/g, '')) {
         document.querySelector('.div3').style.display = "none";
         kudosRandDiv.innerText = kudosRand;
-        kudosRandDiv.style.fontSize = '40px';
-        kudosRandDiv.style.fontStyle = 'sans-serif';
         kudosRandDiv.style.display = 'block';
-        kudosRandDiv.style.color = 'black';
         total++;
         totalPoints.innerHTML = total;
     }
@@ -149,7 +146,6 @@ function display(){
 document.querySelector('#new-game').addEventListener('click', function(){
     currentWord = getNewWord(poolOfWords, currentWord)
     display();
-    console.log(currentWord)
     document.querySelector('.div3').style.display = "flex";
     document.querySelector('.trashtalk').style.display = 'none';
     document.querySelector('.head').style.display = "none";
