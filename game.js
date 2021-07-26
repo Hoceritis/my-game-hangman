@@ -40,8 +40,6 @@ let keys = document.querySelectorAll('.letter-style');
 
 let totalPoints = document.querySelector('.score');
 
-// need to separate the 2 parts of this function
-// One for iterating over the keys, and another one checking the correctness + removing lives if needed
 for(let i = 0; i < keys.length ; i++){
     keys[i].addEventListener('click', function(){
         if(currentWord.includes(keys[i].innerText.toLowerCase()) && !correctGuess.includes(keys[i].innerText.toLowerCase())) {
@@ -108,6 +106,7 @@ function livesCounter (){
 }
 
 function reset(){
+    
     numberOflives = 6;
     correctGuess = [];
     total = 0;
@@ -122,7 +121,7 @@ function reset(){
 // Inline styling ? CSS file should host it
 function display(){
 
-    let placeHolder = '';
+    let placeHolder = ''
 
     for (let i = 0; i < currentWord.length; i++){
         if(correctGuess.includes(currentWord[i])){
@@ -133,7 +132,6 @@ function display(){
     }
     let placeHolderSpace = document.querySelector('.placeholder')
     placeHolderSpace.innerHTML = placeHolder;
-    placeHolderSpace.style.fontSize = '40px';
     if(currentWord === placeHolderSpace.innerHTML.replace(/\s/g, '')) {
         document.querySelector('.div3').style.display = "none";
         kudosRandDiv.innerText = kudosRand;
@@ -143,6 +141,7 @@ function display(){
     }
 }
 
+// upon button click, the game is reset
 document.querySelector('#new-game').addEventListener('click', function(){
     currentWord = getNewWord(poolOfWords, currentWord)
     display();
@@ -156,6 +155,9 @@ document.querySelector('#new-game').addEventListener('click', function(){
     document.querySelector('.right-leg').style.display = "none";
 })
 
+// ??
+// wordsArray is the same thing as poolOfWords = some renaming might be necessary
+// The randomisation done with choseWord could be done with currentWord already ?
 function getNewWord(wordsArray, currentWord){
     const randomIndex = Math.floor((Math.random() * wordsArray.length));
     const chosenWord = wordsArray[randomIndex];
@@ -163,6 +165,7 @@ function getNewWord(wordsArray, currentWord){
     if (chosenWord === currentWord) {
         return getNewWord();
     }
+    // console.log(chosenWord)
     reset();
     return chosenWord;
  }
