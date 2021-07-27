@@ -9,19 +9,14 @@ document.querySelector('.trashtalk').style.display = 'none';
 
 let head = document.querySelector('.head');
 head.style.display = "none";
-
 let body = document.querySelector('.body')
 body.style.display = "none";
-
 let leftArm = document.querySelector('.left-arm')
 leftArm.style.display = "none";
-
 let rightArm = document.querySelector('.right-arm')
 rightArm.style.display = "none";
-
 let leftLeg = document.querySelector('.left-leg')
 leftLeg.style.display = "none";
-
 let rightLeg = document.querySelector('.right-leg')
 rightLeg.style.display = "none";
 
@@ -40,6 +35,7 @@ let keys = document.querySelectorAll('.letter-style');
 
 let totalPoints = document.querySelector('.score');
 
+// check if the result is right or false
 for(let i = 0; i < keys.length ; i++){
     keys[i].addEventListener('click', function(){
         if(currentWord.includes(keys[i].innerText.toLowerCase()) && !correctGuess.includes(keys[i].innerText.toLowerCase())) {
@@ -94,7 +90,6 @@ function hangman() {
         }
 }
 
-// should I initialized a new variable for the thrashtalk div ?
 // Instead of having these line in livesCounter and Display ?
 function livesCounter (){
     if(numberOflives < 1){
@@ -117,8 +112,7 @@ function reset(){
     })
 }
 
-// Do I really need an 'else' here ?
-// Inline styling ? CSS file should host it
+// display the letter / underscore
 function display(){
 
     let placeHolder = ''
@@ -143,8 +137,6 @@ function display(){
 
 // upon button click, the game is reset
 document.querySelector('#new-game').addEventListener('click', function(){
-    currentWord = getNewWord(poolOfWords, currentWord)
-    display();
     document.querySelector('.div3').style.display = "flex";
     document.querySelector('.trashtalk').style.display = 'none';
     document.querySelector('.head').style.display = "none";
@@ -153,21 +145,20 @@ document.querySelector('#new-game').addEventListener('click', function(){
     document.querySelector('.right-arm').style.display = "none";
     document.querySelector('.left-leg').style.display = "none";
     document.querySelector('.right-leg').style.display = "none";
+    display();
+    currentWord = getNewWord(poolOfWords, currentWord)
 })
 
-// ??
-// wordsArray is the same thing as poolOfWords = some renaming might be necessary
-// The randomisation done with choseWord could be done with currentWord already ?
-function getNewWord(wordsArray, currentWord){
-    const randomIndex = Math.floor((Math.random() * wordsArray.length));
-    const chosenWord = wordsArray[randomIndex];
+// Get a new word different from the previous one
+function getNewWord(poolOfWords, currentWord){
+    const randomIndex = Math.floor((Math.random() * poolOfWords.length));
+    const newWord = poolOfWords[randomIndex];
  
-    if (chosenWord === currentWord) {
+    if (newWord === currentWord) {
         return getNewWord();
     }
-    // console.log(chosenWord)
     reset();
-    return chosenWord;
+    return newWord;
  }
 
 
