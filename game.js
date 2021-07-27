@@ -35,6 +35,8 @@ let keys = document.querySelectorAll('.letter-style');
 
 let totalPoints = document.querySelector('.score');
 
+display();
+
 // check if the result is right or false
 for(let i = 0; i < keys.length ; i++){
     keys[i].addEventListener('click', function(){
@@ -45,9 +47,9 @@ for(let i = 0; i < keys.length ; i++){
             numberOflives -= 1;
             keys[i].style.background = '#E05E4A';
         }
-        display();
         livesCounter();
         hangman();
+        display();
     })
 }
 
@@ -114,6 +116,7 @@ function reset(){
 
 // display the letter / underscore
 function display(){
+    console.log(currentWord)
 
     let placeHolder = ''
 
@@ -137,6 +140,7 @@ function display(){
 
 // upon button click, the game is reset
 document.querySelector('#new-game').addEventListener('click', function(){
+    currentWord = getNewWord(poolOfWords, currentWord)
     document.querySelector('.div3').style.display = "flex";
     document.querySelector('.trashtalk').style.display = 'none';
     document.querySelector('.head').style.display = "none";
@@ -146,7 +150,6 @@ document.querySelector('#new-game').addEventListener('click', function(){
     document.querySelector('.left-leg').style.display = "none";
     document.querySelector('.right-leg').style.display = "none";
     display();
-    currentWord = getNewWord(poolOfWords, currentWord)
 })
 
 // Get a new word different from the previous one
