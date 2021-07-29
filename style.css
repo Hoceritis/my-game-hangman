@@ -88,6 +88,17 @@ body {
     outline: 0;
   }
 
+  #next-word {
+    background: #756057;
+    border: 1px solid #756057;
+    border-radius: 6px;
+    box-shadow: 1px 1px 2px #999;
+    color: #fff;
+    padding: 6px 14px;
+    outline: 0;
+  }
+
+
   .total-point {
       font-size: 40px;
       margin-bottom: 50px;

@@ -7,6 +7,9 @@ let div3 = document.querySelector('.div3');
 
 document.querySelector('.trashtalk').style.display = 'none';
 
+let newWord = document.querySelector('#next-word')
+newWord.style.display = "none";
+
 let head = document.querySelector('.head');
 head.style.display = "none";
 let body = document.querySelector('.body')
@@ -52,6 +55,15 @@ for(let i = 0; i < keys.length ; i++){
         display();
     })
 }
+
+// newWord.addEventListener('click', function(){
+//     newWord.style.display = "none";
+//     keys = document.querySelectorAll('.letter-style')
+//     keys.forEach(function(key){
+//         key.style.background = '#756057';
+//     })
+//     getNewWord();
+// })
 
 function hangman() {
     switch (numberOflives) {
@@ -120,7 +132,7 @@ function reset(){
     })
 }
 
-// display the letter / underscore
+// display the letter / underscore + kudos if victory
 function display(){
     console.log(currentWord)
 
@@ -141,6 +153,7 @@ function display(){
         kudosRandDiv.style.display = 'block';
         total++;
         totalPoints.innerHTML = total;
+        newWord.style.display = 'block';
     }
 }
 
