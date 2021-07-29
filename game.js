@@ -95,6 +95,12 @@ function hangman() {
 // Instead of having these line in livesCounter and Display ?
 function livesCounter (){
     if(numberOflives < 1){
+            head = document.querySelector('.head').style.display = "block";
+            body = document.querySelector('.body').style.display = "block";
+            leftArm = document.querySelector('.left-arm').style.display = "block";
+            rightArm = document.querySelector('.right-arm').style.display = "block";
+            leftLeg = document.querySelector('.left-leg').style.display = "block";
+            rightLeg = document.querySelector('.right-leg').style.display = "block";
         thrashtalkDiv.innerText = randomTT + `${currentWord}`;
         thrashtalkDiv.style.display = 'block';
         document.querySelector('.div3').style.display = "none";
